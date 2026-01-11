@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #0d0d0d;
+    color: #f4f4f4;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+/* Color Accents - Updated to Blue */
+.highlight { color: #3498db; }
+span { color: #3498db; }
+
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem 8%;
+    background: rgba(13, 13, 13, 0.9);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul { display: flex; list-style: none; }
+nav ul li { margin-left: 20px; }
+nav a { color: #fff; text-decoration: none; font-size: 0.9rem; opacity: 0.8; transition: 0.3s; }
+nav a:hover { color: #3498db; opacity: 1; }
+
+/* Hero */
+#hero {
+    padding: 100px 10%;
+    text-align: center;
+    background: linear-gradient(to bottom, #0d0d0d, #1a1a1a);
+}
+
+.profile-img {
+    width: 220px;
+    height: 220px;
+    border-radius: 15px; /* Modern slightly rounded look */
+    border: 4px solid #3498db;
+    margin-bottom: 20px;
+    object-fit: cover;
+    box-shadow: 0 10px 30px rgba(52, 152, 219, 0.2);
+}
+
+h1 { font-size: 3rem; margin-bottom: 10px; }
+
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background: #3498db;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px; /* Clean rectangular-round hybrid */
+    font-weight: bold;
+    margin: 10px;
+    transition: 0.3s;
+}
+
+.btn.secondary {
+    background: transparent;
+    border: 2px solid #3498db;
+    color: #3498db;
+}
+
+.btn:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3); }
+
+/* Sections */
+section { padding: 80px 10%; text-align: center; }
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #151515;
+    padding: 40px;
+    border-radius: 20px;
+    border-bottom: 4px solid #3498db;
+}
+
+.about-content p { margin-bottom: 20px; color: #ccc; }
+
+/* Grid Layouts */
+.projects-grid, .payment-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+    align-items: start;
+}
+
+.project-card, .pay-card {
+    background: #1a1a1a;
+    padding: 20px;
+    border-radius: 15px;
+    transition: 0.3s;
+}
+
+/* Video Containers - Unified Height */
+.video-container {
+    width: 100%;
+    height: 280px; /* Fixed height to keep the boxes uniform */
+    background: #000;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 15px;
+    border: 1px solid #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 9:16 Vertical Reel fit */
+.video-container.vertical video {
+    width: auto;
+    height: 100%;
+    object-fit: contain; /* Keeps whole reel visible inside box */
+}
+
+/* 16:9 Landscape fit */
+.video-container.landscape video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Fills the box completely */
+}
+
+video {
+    display: block;
+}
+
+/* Payments Branding */
+.pay-card {
+    color: #3498db;
+    font-weight: bold;
+    border: 1px solid #333;
+}
+
+.pay-card:hover { border-color: #3498db; transform: translateY(-5px); }
+
+footer { padding: 60px 10%; background: #050505; color: #888; }
+footer a { color: #3498db; text-decoration: none; }
+.copyright { margin-top: 30px; font-size: 0.8rem; }
