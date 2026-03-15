@@ -1,0 +1,95 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fce4ec; /* Soft pink background */
+    font-family: 'Arial', sans-serif;
+}
+
+#card-toggle {
+    display: none; /* Keep the checkbox hidden */
+}
+
+.card {
+    position: relative;
+    width: 320px;
+    height: 420px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    cursor: pointer;
+    overflow: hidden;
+    display: block;
+}
+
+/* The Pink Cover */
+.envelope-front {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ff5c8d;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.heart {
+    width: 60px;
+    height: 60px;
+    background-color: white;
+    position: relative;
+    transform: rotate(45deg);
+    margin-bottom: 20px;
+}
+
+.heart::before, .heart::after {
+    content: '';
+    width: 60px;
+    height: 60px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.heart::before { top: -30px; left: 0; }
+.heart::after { left: -30px; top: 0; }
+
+.click-me {
+    color: white;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* The Letter Inside */
+.letter-content {
+    padding: 40px 30px;
+    color: #333;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.confession {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #ff5c8d;
+    margin: 25px 0;
+}
+
+.signature {
+    display: block;
+    margin-top: 40px;
+    font-style: italic;
+    color: #777;
+}
+
+/* Animation: When checked, slide the cover up */
+#card-toggle:checked + .card .envelope-front {
+    transform: translateY(-100%);
+}
