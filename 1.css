@@ -4,13 +4,11 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #fce4ec; /* Soft pink background */
+    background-color: #fce4ec;
     font-family: 'Arial', sans-serif;
 }
 
-#card-toggle {
-    display: none; /* Keep the checkbox hidden */
-}
+#card-toggle { display: none; }
 
 .card {
     position: relative;
@@ -24,7 +22,6 @@ body {
     display: block;
 }
 
-/* The Pink Cover */
 .envelope-front {
     position: absolute;
     top: 0;
@@ -67,11 +64,10 @@ body {
     letter-spacing: 1px;
 }
 
-/* The Letter Inside */
 .letter-content {
     padding: 40px 30px;
     color: #333;
-    line-height: 1.6;
+    line-height: 2;
     text-align: center;
 }
 
@@ -89,7 +85,63 @@ body {
     color: #777;
 }
 
-/* Animation: When checked, slide the cover up */
 #card-toggle:checked + .card .envelope-front {
     transform: translateY(-100%);
+}
+
+.story-link {
+    display: inline-block;
+    color: #ff5c8d;
+    font-weight: bold;
+    text-decoration: none;
+    border-bottom: 2px dashed #ff5c8d;
+    padding-bottom: 2px;
+    margin: 10px 0;
+}
+
+.story-container {
+    max-width: 500px;
+    text-align: center;
+    padding: 20px;
+    line-height: 1.8;
+}
+
+.story-container p {
+    font-size: 1.2rem;
+    color: #444;
+    margin-bottom: 20px;
+}
+
+.final-ask {
+    color: #ff5c8d;
+    font-size: 2.5rem;
+    margin-top: 40px;
+}
+
+.fade-in {
+    opacity: 0;
+    animation: revealText 1.5s forwards;
+}
+
+@keyframes revealText {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.delay-1 { animation-delay: 1s; }
+.delay-2 { animation-delay: 3s; } 
+.delay-3 { animation-delay: 7s; }  
+.delay-4 { animation-delay: 11s; }
+.delay-5 { animation-delay: 16s; } 
+.delay-6 { animation-delay: 20s; } 
+
+.back-btn {
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #ff5c8d;
+    font-size: 0.9rem;
+    border: 1px solid #ff5c8d;
+    padding: 8px 15px;
+    border-radius: 20px;
 }
